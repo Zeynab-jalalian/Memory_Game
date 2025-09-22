@@ -18,7 +18,7 @@ let secondCard = false;
 let interval;
 let cardValues;
 
-const cards = [
+const items = [
   { name: "", image: "" },
   { name: "", image: "" },
   { name: "", image: "" },
