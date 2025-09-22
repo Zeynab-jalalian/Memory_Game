@@ -8,6 +8,7 @@ const Art = document.querySelector(".art");
 const wrapper = document.querySelector(".wrapper");
 const gameContainer = document.querySelector(".game-container");
 
+let cards;
 let move = 0,
   winCount = 0;
 
@@ -59,6 +60,22 @@ const matrixGenerator = (cardValues, size = 4) => {
      </div>
      </div>
      `;
+     cards=document.querySelectorAll(".card-container");
+     cards.forEach((card) => {
+       card.addEventListener("click",()=>{
+        if(!card.classList.contains("matched")){
+          card.classList.add("flipped");
+          if(!firstCard){
+            firstCard=card;
+           let firstCardValue=card.getAttribute("data-card-value");
+          }else{
+            MovesCounter();
+            secondCard=card;
+           let secondCardValue=card.getAttribute("data-card-value");
+          }
+        }
+       })
+     });
   }
 };
 startBtn.addEventListener("click", () => {
