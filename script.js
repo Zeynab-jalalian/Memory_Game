@@ -16,7 +16,6 @@ let firstCard = false;
 let secondCard = false;
 
 let interval;
-let cardValues;
 
 const items = [
   { name: "art1", image: "images/art1" },
@@ -36,6 +35,7 @@ const items = [
 //pick random cards
 const randomCards = (size = 4) => {
   let tempArray = [...items];
+  let cardValues = [];
   size = (size * size) / 2;
   for (let i = 0; i < size; i++) {
     randomIndex = Math.floor(Math.random() * tempArray.length);
@@ -77,4 +77,6 @@ Art.addEventListener("click", () => {
      <img src="${cardValues[i].image}" class="image"></div>
      </div>
      </div>
+const matrixGenerator = (cardValues, size = 4) =>
+
   */
