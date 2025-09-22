@@ -2,6 +2,10 @@ const startPage = document.getElementById("start-page");
 const startBtn = document.getElementById("start-btn");
 const moves = document.querySelector(".moves");
 const time = document.querySelector(".time");
+const catPage = document.querySelector(".category-page");
+const CatBtns = document.querySelectorAll(".cat-btn");
+const Art = document.querySelector(".art");
+const wrapper = document.querySelector(".wrapper");
 
 let move = 0,
   winCount = 0;
@@ -11,9 +15,29 @@ let seconds = 60;
 let firstCard = false;
 let secondCard = false;
 
+let interval;
+let cardValues;
+
+
+const cards = [
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" },
+  { name: "", image: "" }
+];
+
+
 startBtn.addEventListener("click", () => {
   setTimeout(() => {
-    startPage.style.display = "none";
+    startPage.classList.add("hide");
   }, 100);
 });
 
@@ -31,3 +55,7 @@ const timeLimit = () => {
   time.innerHTML = `<span>Time</span>:${secondsValue}`;
 };
 
+Art.addEventListener("click", () => {
+  catPage.classList.add("hide");
+  wrapper.classList.remove("hide");
+});
