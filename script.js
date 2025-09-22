@@ -18,7 +18,6 @@ let secondCard = false;
 let interval;
 let cardValues;
 
-
 const cards = [
   { name: "", image: "" },
   { name: "", image: "" },
@@ -31,9 +30,8 @@ const cards = [
   { name: "", image: "" },
   { name: "", image: "" },
   { name: "", image: "" },
-  { name: "", image: "" }
+  { name: "", image: "" },
 ];
-
 
 startBtn.addEventListener("click", () => {
   setTimeout(() => {
@@ -59,3 +57,12 @@ Art.addEventListener("click", () => {
   catPage.classList.add("hide");
   wrapper.classList.remove("hide");
 });
+
+/*
+<div class="card-container" data-card-value="${cardValues[i].name}">
+     <div class="card-before">?</div>
+     <div class="card-after">
+     <img src="${cardValues[i].image}" class="image"></div>
+     </div>
+     </div>
+  */
