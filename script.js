@@ -19,18 +19,18 @@ let interval;
 let cardValues;
 
 const items = [
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
-  { name: "", image: "" },
+  { name: "art1", image: "images/art1" },
+  { name: "art2", image: "images/art2" },
+  { name: "art3", image: "images/art3" },
+  { name: "art4", image: "images/art4" },
+  { name: "art5", image: "images/art5" },
+  { name: "art6", image: "images/art6" },
+  { name: "art7", image: "images/art7" },
+  { name: "art8", image: "images/art8" },
+  { name: "art9", image: "images/art9" },
+  { name: "art10", image: "images/art10" },
+  { name: "art11", image: "images/art11" },
+  { name: "art12", image: "images/art12" },
 ];
 
 startBtn.addEventListener("click", () => {
