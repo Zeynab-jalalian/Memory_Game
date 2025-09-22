@@ -33,6 +33,18 @@ const items = [
   { name: "art12", image: "images/art12" },
 ];
 
+//pick random cards
+const randomCards = (size = 4) => {
+  let tempArray = [...items];
+  size = (size * size) / 2;
+  for (let i = 0; i < size; i++) {
+    randomIndex = Math.floor(Math.random() * tempArray.length);
+    cardValues.push(tempArray[randomIndex]);
+    tempArray.splice(randomIndex, 1);
+  }
+  return cardValues;
+};
+
 startBtn.addEventListener("click", () => {
   setTimeout(() => {
     startPage.classList.add("hide");
