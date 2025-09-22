@@ -6,6 +6,7 @@ const catPage = document.querySelector(".category-page");
 const CatBtns = document.querySelectorAll(".cat-btn");
 const Art = document.querySelector(".art");
 const wrapper = document.querySelector(".wrapper");
+const gameContainer = document.querySelector(".game-container");
 
 let move = 0,
   winCount = 0;
@@ -44,7 +45,22 @@ const randomCards = (size = 4) => {
   }
   return cardValues;
 };
-
+//shuffle
+const matrixGenerator = (cardValues, size = 4) => {
+  gameContainer.innerHTML = "";
+  cardValues = [...cardValues, ...cardValues];
+  cardValues.sort(() => Math.random() - 0.5);
+  for (let i = 0; i < size * size; i++) {
+    gameContainer.innerHTML += `
+     <div class="card-container" data-card-value="${cardValues[i].name}">
+     <div class="card-before">?</div>
+     <div class="card-after">
+     <img src="${cardValues[i].image}" class="image"></div>
+     </div>
+     </div>
+     `;
+  }
+};
 startBtn.addEventListener("click", () => {
   setTimeout(() => {
     startPage.classList.add("hide");
@@ -69,14 +85,3 @@ Art.addEventListener("click", () => {
   catPage.classList.add("hide");
   wrapper.classList.remove("hide");
 });
-
-/*
-<div class="card-container" data-card-value="${cardValues[i].name}">
-     <div class="card-before">?</div>
-     <div class="card-after">
-     <img src="${cardValues[i].image}" class="image"></div>
-     </div>
-     </div>
-const matrixGenerator = (cardValues, size = 4) =>
-
-  */
