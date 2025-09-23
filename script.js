@@ -65,6 +65,8 @@ const matrixGenerator = (cardValues, size = 4) => {
     cards = document.querySelectorAll(".card-container");
     cards.forEach((card) => {
       card.addEventListener("click", () => {
+        const dingSound2 = new Audio("sounds/ding2.mp3");
+        dingSound2.play();
         if (!card.classList.contains("matched")) {
           card.classList.add("flipped");
           if (!firstCard) {
@@ -75,12 +77,17 @@ const matrixGenerator = (cardValues, size = 4) => {
             secondCard = card;
             let secondCardValue = card.getAttribute("data-card-value");
             if (firstCardValue == secondCardValue) {
+              const dingSound = new Audio("sounds/ding1.mp3");
+              dingSound.play();
+
               firstCard.classList.add("matched");
               secondCard.classList.add("matched");
               firstCard = false;
               secondCard = false;
               winCount += 1;
               if (winCount == Math.floor(cardValues.length / 2)) {
+                const dingSound3 = new Audio("sounds/ding3.mp3");
+                dingSound3.play();
                 result.innerHTML = `
         <h2>Well Done!</h2>
         <h3>Moves: ${move}</h3>
@@ -110,6 +117,8 @@ const matrixGenerator = (cardValues, size = 4) => {
   }
 };
 startBtn.addEventListener("click", () => {
+  const clickSound = new Audio("sounds/click.mp3");
+  clickSound.play();
   setTimeout(() => {
     startPage.classList.add("hide");
   }, 100);
@@ -124,6 +133,8 @@ const timeLimit = () => {
   if (seconds <= 0) {
     seconds = 0;
     stopGame();
+    const oops = new Audio("sounds/oops.mp3");
+    oops.play();
     result.innerHTML = `
         <h2>Game Over!</h2>
      
@@ -138,6 +149,8 @@ const timeLimit = () => {
 };
 
 Art.addEventListener("click", () => {
+  const clickSound = new Audio("sounds/click.mp3");
+  clickSound.play();
   Art.addEventListener("click", () => {
     // پاک کردن اینتروال قبلی اگر وجود داشته باشه
     clearInterval(interval);
@@ -167,6 +180,8 @@ stopBtn.addEventListener(
     stopBtn.addEventListener(
       "click",
       (stopGame = () => {
+        const clickSound = new Audio("sounds/click.mp3");
+        clickSound.play();
         startPage.classList.remove("hide");
         wrapper.classList.add("hide");
         catPage.classList.remove("hide");
