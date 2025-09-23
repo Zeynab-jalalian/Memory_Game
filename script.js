@@ -91,7 +91,6 @@ const matrixGenerator = (cardValues, size = 4) => {
                 wrapper.classList.add("hide");
                 catPage.classList.remove("hide");
 
-                // توقف تایمر
                 clearInterval(interval);
               }
             } else {
@@ -125,29 +124,41 @@ const timeLimit = () => {
   if (seconds <= 0) {
     seconds = 0;
     stopGame();
-                    result.innerHTML = `
+    result.innerHTML = `
         <h2>Game Over!</h2>
      
     `;
 
-               
-                startPage.classList.remove("hide");
-                wrapper.classList.add("hide");
-                catPage.classList.remove("hide");
-
+    startPage.classList.remove("hide");
+    wrapper.classList.add("hide");
+    catPage.classList.remove("hide");
   }
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   time.innerHTML = `<span>Time</span>:${secondsValue}`;
 };
 
 Art.addEventListener("click", () => {
-  move = 0;
-  seconds = 60;
-  moves.innerHTML = `<span>Moves</span>:${move}`;
-  catPage.classList.add("hide");
-  wrapper.classList.remove("hide");
-  interval = setInterval(timeLimit, 1000);
-  initializer();
+  Art.addEventListener("click", () => {
+    // پاک کردن اینتروال قبلی اگر وجود داشته باشه
+    clearInterval(interval);
+
+    // ریست متغیرها
+    move = 0;
+    winCount = 0;
+    seconds = 60;
+    moves.innerHTML = `<span>Moves</span>:${move}`;
+    time.innerHTML = `<span>Time</span>:${seconds}`;
+
+    // صفحات
+    catPage.classList.add("hide");
+    wrapper.classList.remove("hide");
+
+    // شروع تایمر
+    interval = setInterval(timeLimit, 1000);
+
+    // شروع بازی
+    initializer();
+  });
 });
 
 stopBtn.addEventListener(
