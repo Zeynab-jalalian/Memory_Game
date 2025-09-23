@@ -21,9 +21,6 @@ let secondCard = false;
 
 let interval;
 
-
-
-
 const items = [
   { name: "art1", image: "images/art1.jpg" },
   { name: "art2", image: "images/art2.jpg" },
@@ -72,11 +69,11 @@ const matrixGenerator = (cardValues, size = 4) => {
           card.classList.add("flipped");
           if (!firstCard) {
             firstCard = card;
-           firstCardValue = card.getAttribute("data-card-value");
+            firstCardValue = card.getAttribute("data-card-value");
           } else {
             MovesCounter();
             secondCard = card;
-          let secondCardValue = card.getAttribute("data-card-value");
+            let secondCardValue = card.getAttribute("data-card-value");
             if (firstCardValue == secondCardValue) {
               firstCard.classList.add("matched");
               secondCard.classList.add("matched");
@@ -85,10 +82,17 @@ const matrixGenerator = (cardValues, size = 4) => {
               winCount += 1;
               if (winCount == Math.floor(cardValues.length / 2)) {
                 result.innerHTML = `
-               <h2>Well Done!</h2>
-               <h3>Moves:${move}</h3>
-               `;
-                stopGame();
+        <h2>Well Done!</h2>
+        <h3>Moves: ${move}</h3>
+    `;
+
+                // رفتن به صفحه استارت
+                startPage.classList.remove("hide");
+                wrapper.classList.add("hide");
+                catPage.classList.remove("hide");
+
+                // توقف تایمر
+                clearInterval(interval);
               }
             } else {
               let [tempFirst, tempSecond] = [firstCard, secondCard];
@@ -98,7 +102,7 @@ const matrixGenerator = (cardValues, size = 4) => {
               let delay = setTimeout(() => {
                 tempFirst.classList.remove("flipped");
                 tempSecond.classList.remove("flipped");
-              }, 900);
+              }, 400);
             }
           }
         }
@@ -121,6 +125,16 @@ const timeLimit = () => {
   if (seconds <= 0) {
     seconds = 0;
     stopGame();
+                    result.innerHTML = `
+        <h2>Game Over!</h2>
+     
+    `;
+
+               
+                startPage.classList.remove("hide");
+                wrapper.classList.add("hide");
+                catPage.classList.remove("hide");
+
   }
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   time.innerHTML = `<span>Time</span>:${secondsValue}`;
@@ -146,15 +160,14 @@ stopBtn.addEventListener(
         wrapper.classList.add("hide");
         catPage.classList.remove("hide");
         clearInterval(interval);
-        seconds = 60; 
-        time.innerHTML = `<span>Time</span>:${seconds}`; 
-        move = 0; 
+        seconds = 60;
+        time.innerHTML = `<span>Time</span>:${seconds}`;
+        move = 0;
         moves.innerHTML = `<span>Moves</span>:${move}`;
       })
     );
   })
 );
-
 const initializer = () => {
   result.innerText = "";
   winCount = 0;
