@@ -1,37 +1,36 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Body */
 body {
-  background: #ccc;
-  width: 100%;
-  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background: #222;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  min-height: 100vh;
 }
+
+/* Start Page */
 .start-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    135deg,
-    #131010,
-    #1a0033,
-    #33004d,
-    #4b0066,
-    #260033
-  );
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #131010, #33004d, #4b0066);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
+
 .start-page button {
   padding: 15px 40px;
   font-size: 1.5rem;
@@ -41,23 +40,21 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(255, 0, 200, 0.5), 0 0 40px rgba(106, 0, 255, 0.3);
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 20px rgba(255, 0, 200, 0.5);
 }
 
 .start-page button:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 30px rgba(255, 0, 200, 0.8), 0 0 60px rgba(106, 0, 255, 0.6);
-}
-.start-page button:active {
-  background: purple;
+  box-shadow: 0 0 30px rgba(255, 0, 200, 0.7);
 }
 
+/* Category Page */
 .category-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  width: 80%;
+  gap: 15px;
+  width: 90%;
   max-width: 600px;
   margin: 0 auto;
   height: 100vh;
@@ -66,64 +63,46 @@ body {
 }
 
 .category-page button {
-  padding: 15px 25px;
-  font-size: 1.2rem;
+  padding: 12px 20px;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #fff;
   background: linear-gradient(45deg, #6a00ff, #b800e6, #ff00aa);
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .category-page button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(255, 0, 200, 0.5);
 }
-.category-page button:active {
-  background: purple;
-}
-@media (max-width: 600px) {
-  .category-page {
-    grid-template-columns: 1fr;
-  }
-}
 
-
+/* Wrapper (Game Page) */
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
   width: 100%;
-  padding: 20px;
-  background: linear-gradient(
-    135deg,
-    #131010,
-    #1a0033,
-    #33004d,
-    #4b0066,
-    #260033
-  );
+  min-height: 100vh;
+  padding: 10px;
+  background: linear-gradient(135deg, #131010, #1a0033, #33004d);
 }
 
-
+/* Stats */
 .stats {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 90%;
+  width: 95%;
   max-width: 600px;
-  padding: 10px 20px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  font-size: 1.2rem;
+  margin-bottom: 15px;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .stats div {
@@ -131,28 +110,29 @@ body {
   text-align: center;
 }
 
-
-.game-container {
+/* Game Container */
+.games-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 15px;
-  width: 90%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
   max-width: 600px;
-  flex-grow: 1;
+  margin: 0 auto;
 }
 
+/* Stop Button */
 #stop-btn {
-  margin-top: 20px;
-  padding: 12px 30px;
+  margin-top: 15px;
+  padding: 10px 25px;
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
   background: linear-gradient(45deg, #ff0077, #ff00cc);
   border: none;
-  border-radius: 30px;
+  border-radius: 25px;
   cursor: pointer;
   box-shadow: 0 0 15px rgba(255, 0, 200, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 #stop-btn:hover {
@@ -160,47 +140,45 @@ body {
   box-shadow: 0 0 25px rgba(255, 0, 200, 0.7);
 }
 
-#stop-btn:active {
-  background: #cc0066;
-}
-.hide{
+/* Hide class */
+.hide {
   display: none;
 }
 
-
+/* Card Styles */
 .card-container {
-  width: 100px;
-  height: 140px;
+  width: 22vw; /* responsive width for mobile */
+  max-width: 130px;
+  aspect-ratio: 10 / 14; /* maintain height proportional to width */
   perspective: 1000px;
+  height: 150px;
+  position: relative;
 }
 
 .card-container .card-before,
 .card-container .card-after {
   width: 100%;
   height: 100%;
-  border-radius: 15px;
+  border-radius: 12px;
   position: absolute;
   backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: transform 0.5s;
 }
 
 .card-container .card-before {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
   color: #fff;
+  backdrop-filter: blur(5px);
 }
 
 .card-container .card-after {
   transform: rotateY(180deg);
   background: linear-gradient(45deg, #6a00ff, #b800e6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .card-container.flipped .card-before {
@@ -215,5 +193,28 @@ body {
   width: 80%;
   height: 80%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+/* Responsive tweaks for phones */
+@media (max-width: 480px) {
+  .games-container {
+    gap: 8px;
+  }
+
+  .card-container {
+    width: 22vw; /* four cards in a row */
+    max-width: 80px;
+  }
+
+  .stats {
+    flex-direction: column;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+
+  #stop-btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
 }
