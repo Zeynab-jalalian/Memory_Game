@@ -40,7 +40,26 @@ const items = [
   { name: "art10", image: "images/art10.jpg" },
   { name: "art11", image: "images/art11.jpg" },
   { name: "art12", image: "images/art12.jpg" },
+  { name: "art13", image: "images/art13.jpg" },
+  { name: "art14", image: "images/art14.jpg" },
+  { name: "art15", image: "images/art15.jpg" },
+  { name: "art16", image: "images/art16.jpg" },
+  { name: "art17", image: "images/art17.jpg" },
+  { name: "art18", image: "images/art18.jpg" },
+  { name: "art19", image: "images/art19.jpg" },
+  { name: "art20", image: "images/art20.jpg" },
+  { name: "art21", image: "images/art21.jpg" },
+  { name: "art22", image: "images/art22.jpg" },
+  { name: "art23", image: "images/art23.jpg" },
+  { name: "art24", image: "images/art24.jpg" },
+  { name: "art25", image: "images/art25.jpg" },
+  { name: "art26", image: "images/art26.jpg" },
+  { name: "art27", image: "images/art27.jpg" },
+  { name: "art28", image: "images/art28.jpg" },
+  { name: "art29", image: "images/art29.jpg" },
+  { name: "art30", image: "images/art30.jpg" },
 ];
+
 
 // Film items
 const items2 = [
