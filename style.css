@@ -90,26 +90,26 @@ body {
   background: rgba(255,255,255,0.15);
 }
 
-/* Wrapper (Game Page) */
+/* Wrapper (Game Page) - وسط چین کل محتوا */
 .wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;     /* عناصر زیر هم */
+  justify-content: center;    /* وسط عمودی */
+  align-items: center;        /* وسط افقی */
   width: 100%;
   min-height: 100vh;
   padding: 10px;
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(8px);
+  gap: 20px;                  /* فاصله بین stats، کارت‌ها و دکمه */
 }
 
 /* Stats */
 .stats {
   display: flex;
   justify-content: space-between;
-  width: 95%;
+  width: 90%;
   max-width: 400px;
-  margin-bottom: 15px;
   padding: 10px 15px;
   font-weight: bold;
   font-size: 1rem;
@@ -132,12 +132,11 @@ body {
   gap: 10px;
   width: 100%;
   max-width: 400px;
-  margin: 0 auto;
+  justify-items: center;   /* وسط کارت‌ها داخل ستون */
+  justify-content: center; /* وسط کل Grid داخل wrapper */
 }
-
 /* Stop Button */
 #stop-btn {
-  margin-top: 15px;
   padding: 10px 20px;
   font-size: 1rem;
   font-weight: bold;
@@ -151,8 +150,8 @@ body {
 }
 
 #stop-btn:hover {
-  transform: scale(1.05);
   background: rgba(255,255,255,0.15);
+  transform: scale(1.05);
 }
 
 /* Hide class */
@@ -162,8 +161,8 @@ body {
 
 /* Card Styles - مربعی و شیشه‌ای */
 .card-container {
-  width: 22vw;
-  max-width: 120px;
+  width: 25vw;       /* بزرگ‌تر */
+  max-width: 150px;  /* بزرگ‌تر */
   aspect-ratio: 1 / 1;  /* مربعی */
   perspective: 1000px;
   position: relative;
