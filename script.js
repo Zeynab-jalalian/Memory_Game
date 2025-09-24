@@ -56,7 +56,26 @@ const items2 = [
   { name: "film10", image: "images/film10.jpg" },
   { name: "film11", image: "images/film11.jpg" },
   { name: "film12", image: "images/film12.jpg" },
+  { name: "film13", image: "images/film13.jpg" },
+  { name: "film14", image: "images/film14.jpg" },
+  { name: "film15", image: "images/film15.jpg" },
+  { name: "film16", image: "images/film16.jpg" },
+  { name: "film17", image: "images/film17.jpg" },
+  { name: "film18", image: "images/film18.jpg" },
+  { name: "film19", image: "images/film19.jpg" },
+  { name: "film20", image: "images/film20.jpg" },
+  { name: "film21", image: "images/film21.jpg" },
+  { name: "film22", image: "images/film22.jpg" },
+  { name: "film23", image: "images/film23.jpg" },
+  { name: "film24", image: "images/film24.jpg" },
+  { name: "film25", image: "images/film25.jpg" },
+  { name: "film26", image: "images/film26.jpg" },
+  { name: "film27", image: "images/film27.jpg" },
+  { name: "film28", image: "images/film28.jpg" },
+  { name: "film29", image: "images/film29.jpg" },
+  { name: "film30", image: "images/film30.jpg" },
 ];
+
 
 // animals
 const items3 = [
@@ -72,7 +91,26 @@ const items3 = [
   { name: "animal10", image: "images/animal10.jpg" },
   { name: "animal11", image: "images/animal11.jpg" },
   { name: "animal12", image: "images/animal12.jpg" },
+  { name: "animal13", image: "images/animal13.jpg" },
+  { name: "animal14", image: "images/animal14.jpg" },
+  { name: "animal15", image: "images/animal15.jpg" },
+  { name: "animal16", image: "images/animal16.jpg" },
+  { name: "animal17", image: "images/animal17.jpg" },
+  { name: "animal18", image: "images/animal18.jpg" },
+  { name: "animal19", image: "images/animal19.jpg" },
+  { name: "animal20", image: "images/animal20.jpg" },
+  { name: "animal21", image: "images/animal21.jpg" },
+  { name: "animal22", image: "images/animal22.jpg" },
+  { name: "animal23", image: "images/animal23.jpg" },
+  { name: "animal24", image: "images/animal24.jpg" },
+  { name: "animal25", image: "images/animal25.jpg" },
+  { name: "animal26", image: "images/animal26.jpg" },
+  { name: "animal27", image: "images/animal27.jpg" },
+  { name: "animal28", image: "images/animal28.jpg" },
+  { name: "animal29", image: "images/animal29.jpg" },
+  { name: "animal30", image: "images/animal30.jpg" },
 ];
+
 
 // places
 const items4 = [
