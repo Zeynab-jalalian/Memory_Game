@@ -7,8 +7,8 @@ const time = document.querySelector(".time");
 const catPage = document.querySelector(".category-page");
 const Art = document.querySelector(".art");
 const show = document.querySelector(".show");
-const places=document.querySelector(".places");
-const animals=document.querySelector(".animals");
+const places = document.querySelector(".places");
+const animals = document.querySelector(".animals");
 const wrapper = document.querySelector(".wrapper");
 const gameContainer = document.querySelector(".games-container");
 
@@ -55,7 +55,6 @@ const items2 = [
   { name: "film11", image: "images/film11.jpg" },
   { name: "film12", image: "images/film12.jpg" },
 ];
-
 
 // animals
 const items3 = [
@@ -132,6 +131,9 @@ const matrixGenerator = (cardValues, size = 4) => {
           firstCard = card;
           firstCardValue = card.getAttribute("data-card-value");
         } else {
+          if (card === firstCard) {
+            return;
+          }
           MovesCounter();
           secondCard = card;
           let secondCardValue = card.getAttribute("data-card-value");
@@ -212,7 +214,6 @@ show.addEventListener("click", () => {
   startGame(items2);
 });
 
-
 animals.addEventListener("click", () => {
   startGame(items3);
 });
@@ -220,7 +221,6 @@ animals.addEventListener("click", () => {
 places.addEventListener("click", () => {
   startGame(items4);
 });
-
 
 // Stop game
 function stopGame() {
