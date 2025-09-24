@@ -5,9 +5,10 @@ const stopBtn = document.getElementById("stop-btn");
 const moves = document.querySelector(".moves");
 const time = document.querySelector(".time");
 const catPage = document.querySelector(".category-page");
-const CatBtns = document.querySelectorAll(".cat-btn");
 const Art = document.querySelector(".art");
 const show = document.querySelector(".show");
+const places=document.querySelector(".places");
+const animals=document.querySelector(".animals");
 const wrapper = document.querySelector(".wrapper");
 const gameContainer = document.querySelector(".games-container");
 
@@ -53,6 +54,39 @@ const items2 = [
   { name: "film10", image: "images/film10.jpg" },
   { name: "film11", image: "images/film11.jpg" },
   { name: "film12", image: "images/film12.jpg" },
+];
+
+
+// animals
+const items3 = [
+  { name: "animal1", image: "images/animal1.jpg" },
+  { name: "animal2", image: "images/animal2.jpg" },
+  { name: "animal3", image: "images/animal3.jpg" },
+  { name: "animal4", image: "images/animal4.jpg" },
+  { name: "animal5", image: "images/animal5.jpg" },
+  { name: "animal6", image: "images/animal6.jpg" },
+  { name: "animal7", image: "images/animal7.jpg" },
+  { name: "animal8", image: "images/animal8.jpg" },
+  { name: "animal9", image: "images/animal9.jpg" },
+  { name: "animal10", image: "images/animal10.jpg" },
+  { name: "animal11", image: "images/animal11.jpg" },
+  { name: "animal12", image: "images/animal12.jpg" },
+];
+
+// places
+const items4 = [
+  { name: "place1", image: "images/place1.jpg" },
+  { name: "place2", image: "images/place2.jpg" },
+  { name: "place3", image: "images/place3.jpg" },
+  { name: "place4", image: "images/place4.jpg" },
+  { name: "place5", image: "images/place5.jpg" },
+  { name: "place6", image: "images/place6.jpg" },
+  { name: "place7", image: "images/place7.jpg" },
+  { name: "place8", image: "images/place8.jpg" },
+  { name: "place9", image: "images/place9.jpg" },
+  { name: "place10", image: "images/place10.jpg" },
+  { name: "place11", image: "images/place11.jpg" },
+  { name: "place12", image: "images/place12.jpg" },
 ];
 
 // Pick random cards
@@ -176,6 +210,14 @@ Art.addEventListener("click", () => {
 
 show.addEventListener("click", () => {
   startGame(items2);
+});
+
+places.addEventListener("click", () => {
+  startGame(items3);
+});
+
+animals.addEventListener("click", () => {
+  startGame(items4);
 });
 
 // Stop game
