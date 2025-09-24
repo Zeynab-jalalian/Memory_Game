@@ -8,12 +8,23 @@
 /* Body */
 body {
   font-family: 'Arial', sans-serif;
-  background: #f0f0f0;
-  color: #333;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  overflow-y: hidden;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
 }
 
 /* Start Page */
@@ -23,12 +34,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
 }
 
 .start-page button {
@@ -36,25 +48,25 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   color: #fff;
-  background: #333;
-  border: none;
-  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.2s, background 0.3s;
 }
 
 .start-page button:hover {
   transform: scale(1.05);
-  background: #555;
+  background: rgba(255,255,255,0.2);
 }
 
 /* Category Page */
 .category-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
   width: 90%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
   height: 100vh;
   justify-content: center;
@@ -62,20 +74,20 @@ body {
 }
 
 .category-page button {
-  padding: 10px 15px;
+  padding: 15px 10px;
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
-  background: #555;
-  border: none;
-  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.2s, background 0.3s;
 }
 
 .category-page button:hover {
   transform: scale(1.05);
-  background: #777;
+  background: rgba(255,255,255,0.15);
 }
 
 /* Wrapper (Game Page) */
@@ -87,7 +99,8 @@ body {
   width: 100%;
   min-height: 100vh;
   padding: 10px;
-  background: #f0f0f0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
 }
 
 /* Stats */
@@ -95,14 +108,16 @@ body {
   display: flex;
   justify-content: space-between;
   width: 95%;
-  max-width: 600px;
+  max-width: 400px;
   margin-bottom: 15px;
-  padding: 8px 15px;
-  background: #e0e0e0;
-  border-radius: 8px;
+  padding: 10px 15px;
   font-weight: bold;
   font-size: 1rem;
-  color: #333;
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(5px);
 }
 
 .stats div {
@@ -110,13 +125,13 @@ body {
   text-align: center;
 }
 
-/* Game Container */
+/* Game Container 4x4 */
 .games-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -127,16 +142,17 @@ body {
   font-size: 1rem;
   font-weight: bold;
   color: #fff;
-  background: #333;
-  border: none;
-  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition: transform 0.2s, background 0.3s;
+  backdrop-filter: blur(5px);
 }
 
 #stop-btn:hover {
   transform: scale(1.05);
-  background: #555;
+  background: rgba(255,255,255,0.15);
 }
 
 /* Hide class */
@@ -144,13 +160,12 @@ body {
   display: none;
 }
 
-/* Card Styles */
+/* Card Styles - مربعی و شیشه‌ای */
 .card-container {
   width: 22vw;
   max-width: 120px;
-  aspect-ratio: 10 / 14;
+  aspect-ratio: 1 / 1;  /* مربعی */
   perspective: 1000px;
-  height: 150px;
   position: relative;
 }
 
@@ -158,7 +173,7 @@ body {
 .card-container .card-after {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
   position: absolute;
   backface-visibility: hidden;
   display: flex;
@@ -170,14 +185,19 @@ body {
 }
 
 .card-container .card-before {
-  background: #ccc;
-  color: #333;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.15);
 }
 
 .card-container .card-after {
   transform: rotateY(180deg);
-  background: #fff;
-  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-container.flipped .card-before {
@@ -189,10 +209,11 @@ body {
 }
 
 .card-container .image {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 10px;
+  background: transparent;
 }
 
 /* Responsive tweaks for phones */
