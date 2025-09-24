@@ -20,6 +20,8 @@ let seconds = 60;
 
 let firstCard = false;
 let secondCard = false;
+let firstCardValue = "";
+let secondCardValue = "";
 
 let interval;
 let currentItems = [];
@@ -136,7 +138,7 @@ const matrixGenerator = (cardValues, size = 4) => {
           }
           MovesCounter();
           secondCard = card;
-          let secondCardValue = card.getAttribute("data-card-value");
+          secondCardValue = card.getAttribute("data-card-value");
 
           if (firstCardValue == secondCardValue) {
             const dingSound = new Audio("sounds/ding1.mp3");
