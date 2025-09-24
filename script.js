@@ -151,7 +151,6 @@ const timeLimit = () => {
 Art.addEventListener("click", () => {
   const clickSound = new Audio("sounds/click.mp3");
   clickSound.play();
-  Art.addEventListener("click", () => {
     // پاک کردن اینتروال قبلی اگر وجود داشته باشه
     clearInterval(interval);
 
@@ -171,29 +170,26 @@ Art.addEventListener("click", () => {
 
     // شروع بازی
     initializer();
-  });
 });
 
-stopBtn.addEventListener(
-  "click",
-  (stopGame = () => {
-    stopBtn.addEventListener(
-      "click",
-      (stopGame = () => {
-        const clickSound = new Audio("sounds/click.mp3");
-        clickSound.play();
-        startPage.classList.remove("hide");
-        wrapper.classList.add("hide");
-        catPage.classList.remove("hide");
-        clearInterval(interval);
-        seconds = 60;
-        time.innerHTML = `<span>Time</span>:${seconds}`;
-        move = 0;
-        moves.innerHTML = `<span>Moves</span>:${move}`;
-      })
-    );
-  })
-);
+function stopGame() {
+  const clickSound = new Audio("sounds/click.mp3");
+  clickSound.play();
+
+  startPage.classList.remove("hide");
+  wrapper.classList.add("hide");
+  catPage.classList.remove("hide");
+
+  clearInterval(interval);
+  seconds = 60;
+  time.innerHTML = `<span>Time</span>: ${seconds}`;
+
+  move = 0;
+  moves.innerHTML = `<span>Moves</span>: ${move}`;
+}
+
+stopBtn.addEventListener("click", stopGame);
+
 const initializer = () => {
   result.innerText = "";
   winCount = 0;
