@@ -212,13 +212,15 @@ show.addEventListener("click", () => {
   startGame(items2);
 });
 
-places.addEventListener("click", () => {
+
+animals.addEventListener("click", () => {
   startGame(items3);
 });
 
-animals.addEventListener("click", () => {
+places.addEventListener("click", () => {
   startGame(items4);
 });
+
 
 // Stop game
 function stopGame() {
