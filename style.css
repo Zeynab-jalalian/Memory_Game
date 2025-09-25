@@ -167,7 +167,9 @@ body {
   perspective: 1000px;
   position: relative;
 }
-
+.active{
+  transform:scale(0.8);
+}
 .card-container .card-before,
 .card-container .card-after {
   width: 100%;

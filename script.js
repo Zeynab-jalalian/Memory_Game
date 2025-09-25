@@ -60,7 +60,6 @@ const items = [
   { name: "art30", image: "images/art30.jpg" },
 ];
 
-
 // Film items
 const items2 = [
   { name: "film1", image: "images/film1.jpg" },
@@ -95,7 +94,6 @@ const items2 = [
   { name: "film30", image: "images/film30.jpg" },
 ];
 
-
 // animals
 const items3 = [
   { name: "animal1", image: "images/animal1.jpg" },
@@ -129,7 +127,6 @@ const items3 = [
   { name: "animal29", image: "images/animal29.jpg" },
   { name: "animal30", image: "images/animal30.jpg" },
 ];
-
 
 // places
 const items4 = [
@@ -198,6 +195,10 @@ const matrixGenerator = (cardValues, size = 4) => {
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
+      card.classList.add("active");
+      setTimeout(() => {
+        card.classList.remove("active");
+      }, 100);
       const dingSound2 = new Audio("sounds/ding2.mp3");
       dingSound2.play();
 
