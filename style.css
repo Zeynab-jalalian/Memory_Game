@@ -14,7 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow-y: hidden;
+  overflow-y: hidden;cursor: url('blue-cursor.png'), auto;
 }
 
 /* Glass effect */
